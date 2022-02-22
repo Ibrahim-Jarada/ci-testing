@@ -40,7 +40,7 @@ describe('Get specific facster route', () => {
     test('GET Route /facster/:name nonexistence, status 200, json header, specific facster data in json', (done) => {
         request(app)
         .get('/facsters/Ibrahim')
-        .expect(404)
+        .expect(200)
         .end((err, res) => {
             if (err) return done(err);
             expect(res.body).toEqual({message: 'The user doesnt exist'})
